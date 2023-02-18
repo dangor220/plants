@@ -1,0 +1,30 @@
+.about {
+  // .about__wrapper
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 94px;
+    padding-bottom: 88px;
+  }
+  // .about__column
+  
+  // .about__column-descr
+  &__column-descr {
+    max-width: 600px;
+  }
+  // .about__title
+  &__title {
+    margin-bottom: 39px;
+    // .about__title_orange
+    &_orange {
+      color: $orange;
+    }
+  }
+  // .about__descr
+  &__descr {
+    margin: 0;
+    line-height: 150%;
+    color: $darkgray;
+  }
+}

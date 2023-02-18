@@ -1,0 +1,181 @@
+@mixin inika-regular {
+	font-family: 'Inika', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+}
+.header {
+	background-color: $bg;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 52px;
+		padding-bottom: 42px;
+	}
+	&__popup {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+	}
+	&__list {
+		display: flex;
+		list-style: none;
+
+		margin: 0;
+		padding: 0;
+
+		&-item {
+			margin-left: 47.3px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+		&-link {
+			@include inika-regular();
+			color: $link;
+			text-decoration: none;
+			transition: 0.3s color;
+			line-height: 31px;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+}
+.logo {
+	&__link {
+		display: flex;
+
+		@include inika-regular();
+		text-decoration: none;
+		color: #000000;
+	}
+	&__text {
+		line-height: 30px;
+		margin-left: 2px;
+	}
+	&__image {
+		width: 22px;
+		height: 22px;
+	}
+}
+
+.burger {
+	display: none;
+	position: relative;
+	z-index: 10;
+
+	width: 40px;
+	height: 24px;
+
+	cursor: pointer;
+	// .burger__line
+	&__line {
+		display: block;
+		width: 40px;
+		height: 2px;
+		background-color: $gray;
+		margin-bottom: 6px;
+		transition: 0.3s height;
+		&_4 {
+			margin-bottom: 0;
+		}
+	}
+	&_active {
+		.burger__line {
+			// .burger__line_one
+			&_1 {
+				border: 2px solid $green;
+				width: 30px;
+				height: 30px;
+				background-color: transparent;
+				border-radius: 50%;
+				margin-bottom: 0;
+
+				animation: gradientCircleOne 3s linear infinite;
+			}
+			// .burger__line_two
+			&_2 {
+				position: absolute;
+				top: 8px;
+				left: 8px;
+				border: 1px solid #ffffffb0;
+				box-shadow: 0 0 10px #ffffffb0;
+				width: 15px;
+				height: 15px;
+				background-color: transparent;
+				border-radius: 50%;
+
+				animation: moveCircleTwo 6s linear infinite;
+			}
+
+			// .burger__line_three
+			&_3 {
+				position: absolute;
+				top: 9px;
+				left: 10px;
+				border: 1px solid $orange;
+				width: 10px;
+				height: 10px;
+				background-color: transparent;
+				border-radius: 50%;
+
+				animation: moveCircleThree 5s linear infinite;
+			}
+			&_4 {
+				position: absolute;
+				top: 12px;
+				left: 12px;
+				border: 1px solid rgb(236, 232, 103);
+				box-shadow: 0 0 10px rgb(236, 232, 103);
+				width: 7px;
+				height: 7px;
+				background-color: transparent;
+				border-radius: 50%;
+
+				animation: moveCircleFour 2s linear infinite;
+			}
+			@keyframes moveCircleTwo {
+				from {
+					transform: rotate(540deg) translateX(25px) rotate(540deg);
+				}
+				to {
+					transform: rotate(180deg) translateX(25px) rotate(180deg);
+				}
+			}
+			@keyframes moveCircleThree {
+				from {
+					transform: rotate(180deg) translateX(21px) rotate(180deg);
+				}
+				to {
+					transform: rotate(540deg) translateX(21px) rotate(540deg);
+				}
+			}
+			@keyframes moveCircleFour {
+				from {
+					transform: rotate(180deg) translateX(9px) rotate(180deg);
+				}
+				to {
+					transform: rotate(540deg) translateX(9px) rotate(540deg);
+				}
+			}
+			@keyframes gradientCircleOne {
+				0% {
+					box-shadow: 0 0 10px $orange;
+					border-color: $orange;
+				}
+				50% {
+					box-shadow: 0 0 20px $green;
+					border-color: $green;
+				}
+				100% {
+					box-shadow: 0 0 10px $orange;
+					border-color: $orange;
+				}
+			}
+		}
+	}
+}

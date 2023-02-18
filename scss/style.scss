@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:300,regular,600,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:regular);
+@import url(https://fonts.googleapis.com/css?family=Inika:regular,700);
+
+@import './base/normalize';
+@import './base/variables';
+@import './base/general';
+
+@import './blocks/header/header';
+@import './blocks/main/welcome';
+@import './blocks/main/about';
+@import './blocks/main/service';
+@import './blocks/main/prices';
+@import './blocks/main/contacts';
+@import './blocks/footer/footer';
+
+@import './base/media';
